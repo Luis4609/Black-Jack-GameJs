@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: radial-gradient(DarkGreen, green);
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.vertical-center {
+  min-height: 70%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 70vh; 
+  display: flex;
+  align-items: center;
+}
+
+.game-area {
+  padding: 10px 10px 10px;
+  height: 100%;
+	width: 100%;
+}
+
+.dealer-area {
+  height: 35vh;
+}
+
+.player-area {
+  height: 35vh;
+}
+
+.score-area {
+  height: 5vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.value {
+  padding: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  display: inline;
+}
+
+.score {
+  height: 100%;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background: #0E6655;
+  display: block;
+}
+
+.vcenter{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+}
