@@ -211,7 +211,7 @@ function createDeck(cardSet) {
     for (let suit of cardSet.suits) {
       for (let rank of cardSet.ranks) {
         let cardString = String(rank) + String(suit);
-        let image = 'img/' + String(cardString) + '.png';
+        let image = '/assets/img/' + String(cardString) + '.png';
         deck.push(new Card(String(rank), String(suit), cardString, image));
       }
     }
