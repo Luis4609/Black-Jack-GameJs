@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, css } from "lit";
 
 export class MyElement extends LitElement {
   static get styles() {

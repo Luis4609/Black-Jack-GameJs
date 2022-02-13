@@ -21,6 +21,8 @@ $(document).ready(function() {
     newRound(gameBoard, id);
   });
 
+// id.newButton.click(setTimeout(() => newRound, 2000), gameBoard, id);
+
   id.hitButton.click(function() {
     hit(gameBoard, id);
   });

@@ -1,7 +1,7 @@
 const CARD_SET = {
-  suits: ['H', 'S', 'D', 'C'],
-  ranks: [2, 3, 4, 5, 6, 7, 8, 9, 0, 'J', 'Q', 'K', 'Ace'],
-}
+  suits: ["H", "S", "D", "C"],
+  ranks: [2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K", "Ace"],
+};
 
 class GameBoard {
   constructor(deck) {
@@ -46,7 +46,6 @@ function stand(gameBoard, id) {
   if (gameBoard.roundFinished) {
     return 0;
   }
-
   while (doesDealerHit(gameBoard.dealerHand)) {
     gameBoard.dealerHand.push(drawCards(gameBoard.deck, 1)[0]);
   }
@@ -68,7 +67,6 @@ function newRound(gameBoard, id) {
   if (!gameBoard.roundFinished) {
     return 0;
   }
-
   if (gameBoard.deck.length < 52 * 5) {
     gameBoard.deck = createDeck(CARD_SET);
   }
@@ -84,26 +82,30 @@ function newRound(gameBoard, id) {
 }
 
 function alertLoss(id) {
-  id.messageArea.addClass('alert-danger');
-  id.messageArea.removeClass('invisible');
-  id.messageArea.html("<b>You lose.</b> <em>Press 'New round' to play again.</em>")
+  id.messageArea.addClass("alert-danger");
+  id.messageArea.removeClass("invisible");
+  id.messageArea.html(
+    "<b>You lose.</b> <em>Press 'New round' to play again.</em>"
+  );
 }
 
 function alertWin(id) {
-  id.messageArea.addClass('alert-success');
-  id.messageArea.removeClass('invisible');
-  id.messageArea.html('<b>You win!</b> <em>Press "New round" to play again.</em>')
+  id.messageArea.addClass("alert-success");
+  id.messageArea.removeClass("invisible");
+  id.messageArea.html(
+    '<b>You win!</b> <em>Press "New round" to play again.</em>'
+  );
 }
 
 function alertNew(id) {
-  id.messageArea.addClass('alert-secondary');
-  id.messageArea.removeClass('invisible');
-  id.messageArea.html('<b>Welcome!</b> <em>Press "New round" to play.</em>')
+  id.messageArea.addClass("alert-secondary");
+  id.messageArea.removeClass("invisible");
+  id.messageArea.html('<b>Welcome!</b> <em>Press "New round" to play.</em>');
 }
 
 function clearMessage(id) {
-  id.messageArea.removeClass('alert-secondary alert-success alert-danger');
-  id.messageArea.addClass('invisible');
+  id.messageArea.removeClass("alert-secondary alert-success alert-danger");
+  id.messageArea.addClass("invisible");
 }
 
 function hasPlayerLost(gameBoard) {
@@ -114,16 +116,22 @@ function hasPlayerLost(gameBoard) {
 }
 
 function hasPlayerWon(gameBoard) {
-  if (gameBoard.playerScore.score === 21
-    && gameBoard.playerHand.length === 2
-    && gameBoard.dealerScore.score !== 21
-    && gameBoard.dealerHand.length !== 2) {
+  if (
+    gameBoard.playerScore.score === 21 &&
+    gameBoard.playerHand.length === 2 &&
+    gameBoard.dealerScore.score !== 21 &&
+    gameBoard.dealerHand.length !== 2
+  ) {
     return true;
-  } else if (gameBoard.playerScore.score > gameBoard.dealerScore.score 
-    && gameBoard.playerScore.score <= 21) {
+  } else if (
+    gameBoard.playerScore.score > gameBoard.dealerScore.score &&
+    gameBoard.playerScore.score <= 21
+  ) {
     return true;
-  } else if (gameBoard.playerScore.score <= 21
-    && gameBoard.dealerScore.score > 21) {
+  } else if (
+    gameBoard.playerScore.score <= 21 &&
+    gameBoard.dealerScore.score > 21
+  ) {
     return true;
   } else {
     return false;
@@ -134,11 +142,15 @@ function drawGameBoard(gameBoard, id) {
   id.cardsLeft.text(gameBoard.deck.length);
   id.dealerCards.empty();
   for (let card of gameBoard.dealerHand) {
-    id.dealerCards.append('<img src="' + card.image + '" width = "120" class="shadow">');
+    id.dealerCards.append(
+      '<img src="' + card.image + '" width = "120" class="shadow">'
+    );
   }
   id.playerCards.empty();
   for (let card of gameBoard.playerHand) {
-    id.playerCards.append('<img src="' + card.image + '" width = "120" class="shadow">');
+    id.playerCards.append(
+      '<img src="' + card.image + '" width = "120" class="shadow">'
+    );
   }
   id.playerScore.text(gameBoard.playerScore.score);
   id.dealerScore.text(gameBoard.dealerScore.score);
@@ -155,7 +167,9 @@ function initializeNewGameBoard() {
 
 function doesDealerHit(dealerHand) {
   let handScore = scoreHand(dealerHand);
-  return handScore.score < 17 || (handScore.score === 17 && handScore.soft === true);
+  return (
+    handScore.score < 17 || (handScore.score === 17 && handScore.soft === true)
+  );
 }
 
 function scoreHand(hand) {
@@ -164,9 +178,9 @@ function scoreHand(hand) {
   let acesScore = 0;
 
   for (let card of hand) {
-    if (card.rank === 'Ace') {
+    if (card.rank === "Ace") {
       acesInHand += 1;
-    } else if ('0JQK'.indexOf(card.rank) !== -1) {
+    } else if ("0JQK".indexOf(card.rank) !== -1) {
       nonAcesScore += 10;
     } else {
       nonAcesScore += Number(card.rank);
@@ -182,12 +196,12 @@ function scoreHand(hand) {
       break;
     }
   }
-  acesScore = (highAces * 11) + (lowAces * 1);
+  acesScore = highAces * 11 + lowAces * 1;
 
   return {
     score: acesScore + nonAcesScore,
-    soft: acesInHand > 0
-  }
+    soft: acesInHand > 0,
+  };
 }
 
 function drawCards(deck, numberOfCards) {
@@ -211,7 +225,7 @@ function createDeck(cardSet) {
     for (let suit of cardSet.suits) {
       for (let rank of cardSet.ranks) {
         let cardString = String(rank) + String(suit);
-        let image = '/assets/img/' + String(cardString) + '.png';
+        let image = "/assets/img/" + String(cardString) + ".png";
         deck.push(new Card(String(rank), String(suit), cardString, image));
       }
     }
