@@ -6,12 +6,12 @@
 
 ### Basics
 
-1. This version of Blackjack is played with 6 decks and does not permit betting
-1. Aces count as 1 or 11 points (whichever is better), 2-9 count according to their value and 10s and face cards each count 10 points
-1. Each hand is valued as the sum of individual cards with the exception of a Blackjack (an ace and any 10-point card)
-   - An ace and any 10-point card is ranked higher than any other hands achieving 21 points
-1. The objective of the game is to win as many rounds as possible by beating the dealer
-1. A round is won by having a total hand value close or at 21 without exceeding 21 **and** beating the dealer's hand value
+1. Esta versión de Blackjack se juega con 6 barajas y no permite apostar.
+1. Los ases cuentan como 1 u 11 puntos (lo que sea mejor), del 2 al 9 cuentan según su valor y los 10 y las figuras cuentan cada uno 10 puntos.
+1. Cada mano se valora como la suma de las cartas individuales a excepción del Blackjack (un as y cualquier carta de 10 puntos)
+   - Un as y cualquier carta de 10 puntos se clasifican más alto que cualquier otra mano logrando 21 puntos
+1. El objetivo del juego es ganar tantas rondas como sea posible venciendo al delear.
+1. Una ronda se gana teniendo un valor total de la mano cercano o de 21 sin exceder 21 **y** superando el valor de la mano del delear
 
 ### How a round is played
 
