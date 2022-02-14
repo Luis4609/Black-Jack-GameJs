@@ -12,13 +12,12 @@
   min-height: 100vh;
   overflow: hidden;
 }
-h1 {
+h1-titulo {
   color: #000;
   font-size: 62px;
   font-weight: 800;
-  
   line-height: 72px;
-  margin-top: 2em;
+  margin-left: 20px;
   text-align: center;
   text-transform: uppercase;
 }
