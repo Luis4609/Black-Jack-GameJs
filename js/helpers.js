@@ -42,7 +42,27 @@ function hit(gameBoard, id) {
   drawGameBoard(gameBoard, id);
 }
 
+//TO-DO
+function timeOut(gameBoard, id) {
+  setTimeout(() => {
+    location.reload();
+  }, 500);
+}
+
+// const promise = new Promise(function (resolve, reject) {
+//   setTimeout(() => resolve("Has ganado!!"), location.reload(), 500);
+// });
+
+// promise
+//   .then(
+//     (result) => alert(result),
+//     (error) => alert(error)
+//   )
+//   .catch();
+
 function stand(gameBoard, id) {
+  console.log(gameBoard);
+  console.log(id);
   if (gameBoard.roundFinished) {
     return 0;
   }
@@ -159,13 +179,13 @@ function drawGameBoard(gameBoard, id) {
   id.gamesPlayed.text(gameBoard.playerGames);
 
   //Alerta para seguir jugando SETINTERVAL
-  let alertGamesPlayed = document.getElementById('games-played').innerText;
+  let alertGamesPlayed = document.getElementById("games-played").innerText;
   console.log(alertGamesPlayed);
 
   //SETTIMEOUT
-  if(alertGamesPlayed > 10){
-   setTimeout(alert('Quieres seguir jugando'), 2000);
-   //open a modal
+  if (alertGamesPlayed > 10) {
+    setTimeout(alert("Quieres seguir jugando"), 2000);
+    //open a modal
   }
 }
 
@@ -247,5 +267,4 @@ function createDeck(cardSet) {
   //     return deck;
   //   }, 2000)
   // })
-  
 }

@@ -72,24 +72,17 @@ ul li a:hover:before {
   height: 1800px;
 }
 ul li:nth-child(6n + 1) a:before {
-  /* background: #81ecec; */
   background: #0bce56;
 }
 ul li:nth-child(6n + 2) a:before {
-  /* background: #ff7675; */
-  background: #06b148;
+  background: #0bce56;
 }
 ul li:nth-child(6n + 3) a:before {
-  /* background: #55efc4; */
-  background: #058135;
+  background: #06b148;
 }
 ul li:nth-child(6n + 4) a:before {
-  /* background: #a29bfe; */
-  background: #035322;
+  background: #058135;
 }
 ul li:nth-child(6n + 5) a:before {
-  background: #fd79a8;
-}
-ul li:nth-child(6n + 6) a:before {
-  background: #ffeaa7;
+  background: #035322;
 }
