@@ -4,7 +4,7 @@
 
 ## How to play
 
-### Basics
+### Inicial
 
 1. Esta versión de Blackjack se juega con 6 barajas y no permite apostar.
 1. Los ases cuentan como 1 u 11 puntos (lo que sea mejor), del 2 al 9 cuentan según su valor y los 10 y las figuras cuentan cada uno 10 puntos.
@@ -13,7 +13,7 @@
 1. El objetivo del juego es ganar tantas rondas como sea posible venciendo al delear.
 1. Una ronda se gana teniendo un valor total de la mano cercano o de 21 sin exceder 21 **y** superando el valor de la mano del delear
 
-### How a round is played
+### Como se juega cada ronda
 
 1. Empezar una nueva ronda pulsando: 'New round'.
 1. El dealer (la casa) revela una carta para el y otras dos en la mano del jugador.
