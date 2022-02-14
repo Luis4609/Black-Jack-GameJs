@@ -2,7 +2,7 @@
 
 ![Blackjack](assets/screenshots/blackjack.png)
 
-## How to play
+## Como jugar
 
 ### Inicial
 
