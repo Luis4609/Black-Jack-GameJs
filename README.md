@@ -1,6 +1,6 @@
 # Blackjack-js
 
-![Blackjack](screenshots/blackjack.png)
+![Blackjack](assets/screenshots/blackjack.png)
 
 ## How to play
 
