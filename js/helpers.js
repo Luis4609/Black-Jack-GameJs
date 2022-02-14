@@ -159,11 +159,13 @@ function drawGameBoard(gameBoard, id) {
   id.gamesPlayed.text(gameBoard.playerGames);
 
   //Alerta para seguir jugando SETINTERVAL
-  let partidas = document.getElementById('games-played').innerText;
-  console.log(partidas);
+  let alertGamesPlayed = document.getElementById('games-played').innerText;
+  console.log(alertGamesPlayed);
 
-  if(partidas > 10){
-    alert('Quieres seguir jugando');
+  //SETTIMEOUT
+  if(alertGamesPlayed > 10){
+   setTimeout(alert('Quieres seguir jugando'), 2000);
+   //open a modal
   }
 }
 
