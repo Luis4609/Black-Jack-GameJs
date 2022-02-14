@@ -157,6 +157,14 @@ function drawGameBoard(gameBoard, id) {
   id.gamesWon.text(gameBoard.playerWins);
   id.gamesLost.text(gameBoard.playerLosses);
   id.gamesPlayed.text(gameBoard.playerGames);
+
+  //Alerta para seguir jugando SETINTERVAL
+  let partidas = document.getElementById('games-played').innerText;
+  console.log(partidas);
+
+  if(partidas > 10){
+    alert('Quieres seguir jugando');
+  }
 }
 
 function initializeNewGameBoard() {
@@ -231,4 +239,11 @@ function createDeck(cardSet) {
     }
   }
   return deck;
+  // return Promise.resolve().then(() => {
+  //   setTimeout(() => {
+  //     console.log("PROMISE")
+  //     return deck;
+  //   }, 2000)
+  // })
+  
 }

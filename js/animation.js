@@ -38,6 +38,3 @@ function newGame(){
             setTimeout(loadingAnimation, 10);
     }, 1000)
 }
-
-fetch('index.html')
-.then()

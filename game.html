@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+	<!-- These 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Blackjack</title>
+
+	<!-- Broswer icons -->
+	<link rel="icon" type="img/favicon" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="icon" type="img/favicon" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="img/faviocn" sizes="96x96" href="img/favicon/favicon-96x96.png">
+
+	<!-- Bootstrap and custom css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+	<!-- Nav bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="menu.html">
+			<img src="/assets/img/favicon/android-chrome-192x192.png" width="30" height="30" class="d-inline-block align-top"
+				alt="">
+			Menu
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="navbar-nav my-2 my-lg-0">
+				<a class="nav-link" href="instrucciones.html">Instrucciones</a>
+				<a class="nav-link" href="https://www.pokerstarscasino.es/games/blackjack/rules/?no_redirect=1">Reglas Oficiales</a>
+				<a class="nav-link" href="https://github.com/Luis4609/Black-Jack-GameJs">Github</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Game area -->
+	<div class="game-area vertical-center">
+		<div class="container">
+
+			<!-- Dealer area -->
+			<div class="row no-gutters">
+				<div class="col-8">
+					<div class="value">
+						<p class="">Dealer score: <span id="dealer-score"></span></p>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="value text-center">
+						<p class="">Deck</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row dealer-area no-gutters">
+				<!-- Dealer cards -->
+				<div class="col-8">
+					<div class="vcenter" id="dealer-cards">
+					</div>
+				</div>
+
+				<!-- Deck -->
+				<div class="col-4 deck-area text-center">
+					<div class="vcenter"><img src="assets/img/cardBack2.png" width="120" class="shadow"></div>
+				</div>
+
+			</div> <!-- End of dealer area -->
+
+			<!-- Player area -->
+			<div class="row no-gutters">
+				<div class="value">
+					<p class="">Player score: <span id="player-score"></span></p>
+				</div>
+			</div>
+
+			<!-- Player cards -->
+			<div class="row player-area no-gutters">
+				<div class="col-8">
+					<div class="vcenter" id="player-cards">
+						<!-- <img src="img/KH.png" width="96" class="shadow"> -->
+					</div>
+				</div>
+
+				<!-- Buttons -->
+				<div class="col-4 container">
+					<div class="vcenter">
+						<div id="message-area" class="alert invisible border border-dark shadow" role="alert">
+							Message text to be replaced
+						</div>
+						<hr>
+						<button type="button" class="btn btn-primary btn-block border border-light shadow"
+							id="hit-button">Hit</button>
+						<button type="button" class="btn btn-primary btn-block border border-light shadow"
+							id="stand-button">Stand</button>
+						<hr>
+						<button type="button" class="btn btn-secondary btn-block border border-light shadow"
+							id="new-button">New round</button>
+					</div>
+				</div>
+
+			</div> <!-- End of player area -->
+
+			<!-- Score area -->
+			<div class="row score-area no-gutters">
+				<div class="col-4 score">
+					<div class="vcenter">
+						<p>Played: <span id="games-played"></span></p>
+					</div>
+				</div>
+				<div class="col-4 score">
+					<div class="vcenter">
+						<p>Won: <span id="games-won"></span></p>
+					</div>
+				</div>
+				<div class="col-4 score">
+					<div class="vcenter">
+						<p>Lost: <span id="games-lost"></span></p>
+					</div>
+				</div>
+			</div> <!-- End of score area -->
+
+		</div> <!-- End of game area -->
+
+	</div> <!-- End of site -->
+
+	<!-- jQuery, Popper, Bootstrap -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+	<!-- Main script & game logic -->
+	<script type="text/javascript" src="js/helpers.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
