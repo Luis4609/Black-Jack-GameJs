@@ -1,6 +1,11 @@
 # Blackjack-js
 
 ![Blackjack](assets/screenshots/blackjack.png)
+![BlackjackStarted](assets/screenshots/blackjack-started-game.png)
+
+## Menu
+
+![BlackjackStarted](assets/screenshots/menu.png)
 
 ## Como jugar
 
