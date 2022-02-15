@@ -46,7 +46,7 @@ function hit(gameBoard, id) {
 function timeOut(gameBoard, id) {
   setTimeout(() => {
     location.reload();
-  }, 500);
+  }, 100);
 }
 
 // const promise = new Promise(function (resolve, reject) {
@@ -163,13 +163,13 @@ function drawGameBoard(gameBoard, id) {
   id.dealerCards.empty();
   for (let card of gameBoard.dealerHand) {
     id.dealerCards.append(
-      '<img src="' + card.image + '" width = "120" class="shadow">'
+      '<img src="' + card.image + '" width = "120" class="shadow" id="new-card-dealer">'
     );
   }
   id.playerCards.empty();
   for (let card of gameBoard.playerHand) {
     id.playerCards.append(
-      '<img src="' + card.image + '" width = "120" class="shadow">'
+      '<img src="' + card.image + '" width = "120" class="shadow" id="new-card-player">'
     );
   }
   id.playerScore.text(gameBoard.playerScore.score);
@@ -182,11 +182,11 @@ function drawGameBoard(gameBoard, id) {
   let alertGamesPlayed = document.getElementById("games-played").innerText;
   console.log(alertGamesPlayed);
 
-  //SETTIMEOUT
-  if (alertGamesPlayed > 10) {
-    setTimeout(alert("Quieres seguir jugando"), 2000);
-    //open a modal
-  }
+  //SETTIMEOUT TO-DO
+  // if (alertGamesPlayed > 10) {
+  //   setTimeout(alert("Quieres seguir jugando"), 2000);
+  //   //open a modal
+  // }
 }
 
 function initializeNewGameBoard() {

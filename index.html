@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
     <!-- <script type="module" src="Components/my-menu.js"></script> -->
     <script src="js/componente.js"></script>
+
 </head>
 
 <body>
@@ -21,14 +23,25 @@
             <my-menu name="Instrucciones" url="instrucciones.html"></my-menu>
             <my-menu name="Reglas oficiales" url="https://www.pokerstarscasino.es/games/blackjack/rules/?no_redirect=1"></my-menu>
             <my-menu name="GitHub" url="https://github.com/Luis4609/Black-Jack-GameJs"></my-menu> -->
-            
-            <li><a href="game.html" data-text="Nueva Partida">Nueva Partida</a></li>
+
+            <!-- MENU -->
+            <li><a data-text="Nueva Partida" id="loadNewGame">Nueva
+                    Partida</a></li>
             <li><a href="instrucciones.html" data-text="Instrucciones">Instrucciones</a></li>
             <li><a href="https://www.pokerstarscasino.es/games/blackjack/rules/?no_redirect=1" data-text="Reglas">Reglas
                     oficiales</a></li>
             <li><a href="https://github.com/Luis4609/Black-Jack-GameJs" data-text="GitHub">GitHub</a></li>
         </ul>
     </div>
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <h1> Loading New Game</h1>
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/load.js"></script>
 </body>
 
 </html>

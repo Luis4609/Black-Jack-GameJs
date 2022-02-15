@@ -16,23 +16,95 @@ $(document).ready(function () {
     timeOut: $("#time-out"),
   };
 
+  // $("#deck-area").click(function(){
+  //   var div = $(".deck-area");
+  //   div.animate({width: '100px'}, "slow");
+  //   // div.animate({left: '100px'}, "slow");
+  // });
+
+  //Hover effects
+  $("#deck-area").hover(
+    function () {
+      $(this).css("transform", " scale(1.1)");
+    },
+    function () {
+      $(this).css("transform", " scale(1)");
+    }
+  );
+
   alertNew(id);
 
-  id.newButton.click(function () {
-    newRound(gameBoard, id);
+  //Double click to make the message dissapear
+  $("#message-area").dblclick(function () {
+    $(this).hide();
   });
-
-  // id.newButton.click(setTimeout(() => newRound, 2000), gameBoard, id);
 
   id.hitButton.click(function () {
     hit(gameBoard, id);
   });
 
-  id.standButton.click(function () {
-    stand(gameBoard, id);
+  //Promise with jQuery -- NEWROUND
+  $("#new-button").on("click", function () {
+    $("#dealer-cards").fadeIn(2500);
+    $("#player-cards").fadeIn(2500);
+    $("#time-out").hide(1000);
+    $("#message-area").show(500);
+
+    $("#new-button")
+      .promise()
+      .done(function () {
+        newRound(gameBoard, id);
+      });
   });
-  
-  id.timeOut.click(function () {
-    timeOut(gameBoard, id);
+
+  //Promise with jQuery -- STAND
+  $("#stand-button").on("click", function () {
+    $("#new-card-dealer").fadeIn(2000);
+    $("#time-out").show(2000);
+
+    $("#stand-button")
+      .promise()
+      .done(function () {
+        stand(gameBoard, id);
+      });
+  });
+
+  //Promise with jQuery -- RESTART
+  $("#time-out").on("click", function () {
+    $("p").append(" Restart...");
+
+    $(this).fadeIn().fadeOut(2500);
+    $("#message-area").fadeIn().fadeOut(2500);
+    $("#hit-button").fadeIn().fadeOut(2500);
+    $("#new-button").fadeIn().fadeOut(2500);
+    $("#stand-button").fadeIn().fadeOut(2500);
+    $("#deck-area").fadeIn().fadeOut(2500);
+    $("#dealer-cards").fadeIn().fadeOut(2500);
+    $("#player-cards").fadeIn().fadeOut(2500);
+
+    $("#time-out")
+      .promise()
+      .done(function () {
+        timeOut(gameBoard, id);
+      });
   });
 });
+
+// //Hover effects
+// $("#dealer-score").hover(
+//   function () {
+//     $(this).css("font-size", "36px");
+//   },
+//   function () {
+//     $(this).css("font-size", "16px");
+//   }
+// );
+
+// $("#player-score").hover(
+//   function () {
+//     $(this).css("font-size", "36px");
+//   },
+//   function () {
+//     $(this).css("font-size", "16px");
+//   }
+// );
